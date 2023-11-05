@@ -1,0 +1,22 @@
+<div class="section">
+  <div class="container">
+    <h1 class="title is-4">Customers with Missing Email</h1>
+
+    <div class="columns is-multiline">
+      <% @customers.each do |customer| %>
+        <div class="column is-3">
+          <%= render partial: 'customer', locals: { customer: customer } %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <%= link_to 'Back to Customer List', customers_path, class: 'button' %>
+      </div>
+      <div class="control">
+        <%= link_to 'Alphabetized Customers', customers_alphabetized_path, class: 'button' %>
+      </div>
+    </div>
+  </div>
+</div>
